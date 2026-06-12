@@ -313,6 +313,61 @@
     .badge-purple { background: #eedfff; color: #450090; }
     .badge-coral { background: #ffe8e0; color: #7a2000; }
 
+    /* ── PASS SECTION ── */
+    .pass-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .pass-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: .9rem 1.25rem;
+      background: linear-gradient(90deg, rgba(200,168,75,0.06) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .pass-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .pass-leader-name { font-size: 14px; font-weight: 500; color: var(--text); }
+    .pass-leader-sub { font-size: 12px; color: var(--text-muted); }
+    .pass-members {
+      padding: .75rem 1.25rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .member-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: .3rem .75rem;
+      font-size: 12px;
+      color: var(--text);
+    }
+    .member-chip .nick {
+      font-weight: 600;
+      color: var(--navy-mid);
+    }
+    .member-chip .cls {
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
     /* ── VIDEOS ── */
     .videos-grid {
       display: grid;
@@ -478,7 +533,7 @@
     <div class="profile-main">🎺</div>
     <div class="hero-title">วงโยธวาทิต</div>
     <div class="hero-sub">Marching Band</div>
-    <div class="hero-school">โรงเรียนหาดอมราอักษรลักษณ์วิทยา &nbsp;·&nbsp; ก่อตั้ง พ.ศ. 2538</div>
+    <div class="hero-school">โรงเรียนหาดอมราอักษรลักษณ์วิทยา &nbsp;·&nbsp; จ.สมุทรปราการ</div>
     <div class="stat-row">
       <div class="stat-chip">สมาชิก <span>48</span> คน</div>
       <div class="stat-chip">รางวัล <span>32</span> รางวัล</div>
@@ -539,80 +594,197 @@
     </div>
     <div class="section-title"><i class="fa-solid fa-book-open"></i> ประวัติวง</div>
     <div class="about-text fade-in">
-      <p>วงโยธวาทิตโรงเรียนสยามวิทยา ก่อตั้งขึ้นเมื่อปี พ.ศ. 2538 ด้วยความมุ่งมั่นในการส่งเสริมทักษะทางดนตรีและวินัยให้แก่นักเรียน ตลอดระยะเวลากว่า 28 ปี วงได้เติบโตอย่างต่อเนื่องจนกลายเป็นหนึ่งในวงโยธวาทิตชั้นนำของประเทศ ที่ได้รับรางวัลจากการแข่งขันระดับชาติมากมาย</p>
-      <p>สมาชิกทุกคนได้รับการฝึกฝนทั้งด้านเทคนิคการบรรเลง การเดินสวนสนาม และการแสดงที่สวยงาม ภายใต้การดูแลของครูผู้ฝึกสอนที่มีประสบการณ์ โดยมีเป้าหมายเพื่อสร้างนักดนตรีที่มีคุณภาพและปลูกฝังความภาคภูมิใจในสถาบันให้แก่นักเรียนทุกคน</p>
-      <p>ปัจจุบันวงมีสมาชิกจำนวน 48 คน แบ่งออกเป็นส่วน Brass, Woodwind, Percussion และ Colorguard ซึ่งทำงานร่วมกันอย่างกลมกลืนในทุกการแสดง</p>
+      <p>วงโยธวาทิตโรงเรียนหาดอมราอักษรลักษณ์วิทยา ก่อตั้งขึ้นเมื่อปี พ.ศ. 2538 ด้วยความมุ่งมั่นในการส่งเสริมทักษะทางดนตรีและวินัยให้แก่นักเรียน ภายใต้การดูแลของ อ.ชนม์สวัสดิ์ จันทร์กระแจะ ผู้ควบคุมวง ตลอดระยะเวลากว่า 28 ปี วงได้เติบโตอย่างต่อเนื่องจนกลายเป็นหนึ่งในวงโยธวาทิตชั้นนำของประเทศ ที่ได้รับรางวัลจากการแข่งขันระดับชาติมากมาย</p>
+      <p>สมาชิกทุกคนได้รับการฝึกฝนทั้งด้านเทคนิคการบรรเลง การเดินสวนสนาม และการแสดงที่สวยงาม โดยมีเป้าหมายเพื่อสร้างนักดนตรีที่มีคุณภาพและปลูกฝังความภาคภูมิใจในสถาบันให้แก่นักเรียนทุกคน</p>
+      <p>ปัจจุบันวงแบ่งออกเป็นส่วน Trumpet, Mellophone, Baritone, Tuba, Tenor, Snare, Bass Drum และ Marching Cymbals ซึ่งทำงานร่วมกันอย่างกลมกลืนในทุกการแสดง</p>
     </div>
   </section>
 
   <!-- MEMBERS -->
   <section id="tab-members" class="tab-section">
-    <div class="section-title"><i class="fa-solid fa-chalkboard-user"></i> ผู้ควบคุมและครูฝึก</div>
-    <div class="conductor-grid fade-in">
+
+    <!-- ผู้ควบคุมวง -->
+    <div class="section-title"><i class="fa-solid fa-chalkboard-user"></i> ผู้ควบคุมวง</div>
+    <div class="conductor-grid fade-in" style="margin-bottom:2rem">
       <div class="member-card featured">
-        <div class="avatar av-gold">ผคว.</div>
-        <div class="member-name">อ.สมชาย วงศ์ดี</div>
+        <div class="avatar av-gold">อ.</div>
+        <div class="member-name">อ.ชนม์สวัสดิ์ จันทร์กระแจะ</div>
         <div class="member-role">ผู้ควบคุมวง</div>
-        <span class="role-badge badge-gold">ประธานวง</span>
-      </div>
-      <div class="member-card">
-        <div class="avatar av-blue">ผช.</div>
-        <div class="member-name">อ.วิไล ใจดี</div>
-        <div class="member-role">ผู้ช่วยควบคุมวง</div>
-        <span class="role-badge badge-blue">ดนตรี</span>
-      </div>
-      <div class="member-card">
-        <div class="avatar av-green">ฝึก</div>
-        <div class="member-name">อ.ธนพล เก่งดี</div>
-        <div class="member-role">ครูฝึกเครื่องเป่า</div>
-        <span class="role-badge badge-green">Brass</span>
-      </div>
-      <div class="member-card">
-        <div class="avatar av-purple">ฝึก</div>
-        <div class="member-name">อ.นภา สุขใส</div>
-        <div class="member-role">ครูฝึกการเดิน</div>
-        <span class="role-badge badge-purple">Visual</span>
+        <span class="role-badge badge-gold">ผู้ควบคุมวง</span>
       </div>
     </div>
 
-    <div class="section-title"><i class="fa-solid fa-star"></i> หัวหน้าส่วนและสมาชิกหลัก</div>
-    <div class="conductor-grid fade-in">
+    <!-- คณะกรรมการบริหาร -->
+    <div class="section-title"><i class="fa-solid fa-crown"></i> คณะกรรมการบริหารวง</div>
+    <div class="conductor-grid fade-in" style="margin-bottom:2rem">
       <div class="member-card featured">
-        <div class="avatar av-gold" style="font-size:11px">DM</div>
-        <div class="member-name">สิรวิชญ์ มีสุข</div>
-        <div class="member-role">หัวหน้าวง</div>
-        <span class="role-badge badge-gold">Drum Major</span>
+        <div class="avatar av-gold" style="font-size:11px">ปธ.</div>
+        <div class="member-name">นายธนพล สมสนุก (แตม)</div>
+        <div class="member-role">ประธานวง · ม.6/2 · Tuba</div>
+        <span class="role-badge badge-gold">ประธาน</span>
+      </div>
+      <div class="member-card featured">
+        <div class="avatar av-blue" style="font-size:11px">รปธ.</div>
+        <div class="member-name">นายพีระภัทร รุ่งเรือง (ซัน)</div>
+        <div class="member-role">รองประธาน · ม.6/2 · Tenor</div>
+        <span class="role-badge badge-blue">รองประธาน</span>
       </div>
       <div class="member-card">
-        <div class="avatar av-blue" style="font-size:11px">TP</div>
-        <div class="member-name">ปาลิตา แสงจันทร์</div>
-        <div class="member-role">หัวหน้าส่วน</div>
-        <span class="role-badge badge-blue">Trumpet</span>
+        <div class="avatar av-purple" style="font-size:11px">ลข.</div>
+        <div class="member-name">น.ส.พัสตราภรณ์ เภาโพธิ์ (อ๋อมแอ๋ม)</div>
+        <div class="member-role">เลขาประธาน · ม.6/4 · Trumpet</div>
+        <span class="role-badge badge-purple">เลขา</span>
       </div>
       <div class="member-card">
-        <div class="avatar av-green" style="font-size:11px">PC</div>
-        <div class="member-name">กฤษณ์ พลังมาก</div>
-        <div class="member-role">หัวหน้าส่วน</div>
-        <span class="role-badge badge-green">Percussion</span>
+        <div class="avatar av-green" style="font-size:11px">Cond.</div>
+        <div class="member-name">นายชลตระกานต์ มาฉาย (โต๋)</div>
+        <div class="member-role">Conductor ประจำวง · ม.5/2 · Tenor</div>
+        <span class="role-badge badge-green">Conductor</span>
       </div>
-      <div class="member-card">
-        <div class="avatar av-purple" style="font-size:11px">CG</div>
-        <div class="member-name">นัทธมน ดาวเรือง</div>
-        <div class="member-role">หัวหน้าส่วน</div>
-        <span class="role-badge badge-purple">Colorguard</span>
+    </div>
+
+    <!-- หัวหน้า Pass และสมาชิก -->
+    <div class="section-title"><i class="fa-solid fa-music"></i> หัวหน้า Pass และสมาชิก</div>
+    <div class="fade-in">
+
+      <!-- Trumpet -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#ddeeff;color:#003a80">TP</div>
+          <div>
+            <div class="pass-leader-name">🎺 Trumpet &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายณัฐวุฒิ สุริยะชัยพร (แบงค์)</strong> ม.6/2</div>
+            <div class="pass-leader-sub">สมาชิก 8 คน</div>
+          </div>
+          <span class="role-badge badge-blue" style="margin-left:auto">Trumpet</span>
+        </div>
+        <div class="pass-members">
+          <div class="member-chip"><span class="nick">เอิร์น</span> ด.ญ.โยษิตา อินทระ <span class="cls">ม.1/2</span></div>
+          <div class="member-chip"><span class="nick">เอิร์น</span> ด.ญ.ปิยธิดา ใจพุก <span class="cls">ม.1/2</span></div>
+          <div class="member-chip"><span class="nick">อิ๊ง</span> ด.ญ.นันทิกานต์ กันดิษฐ <span class="cls">ม.1/2</span></div>
+          <div class="member-chip"><span class="nick">ปาย</span> ด.ญ.ฐิติพร บุญทรัพย์ <span class="cls">ม.1/3</span></div>
+          <div class="member-chip"><span class="nick">หญิง</span> ด.ญ.ทิพรดา ดีชุ่ม <span class="cls">ม.2/6</span></div>
+          <div class="member-chip"><span class="nick">ช่า</span> น.ส.สุฐิดา การวิจัย <span class="cls">ม.4/1</span></div>
+          <div class="member-chip"><span class="nick">ป๊อบ</span> นายวีรวัฒน์ บุญเฉย</div>
+          <div class="member-chip"><span class="nick">อ๋อมแอ๋ม</span> น.ส.พัสตราภรณ์ เภาโพธิ์ <span class="cls">ม.6/4</span></div>
+        </div>
       </div>
-      <div class="member-card">
-        <div class="avatar av-blue" style="font-size:11px">TB</div>
-        <div class="member-name">ชยพล สดใส</div>
-        <div class="member-role">หัวหน้าส่วน</div>
-        <span class="role-badge badge-blue">Trombone</span>
+
+      <!-- Mellophone -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#fff3e0;color:#8a4500">ML</div>
+          <div>
+            <div class="pass-leader-name">🎷 Mellophone &nbsp;·&nbsp; หัวหน้า Pass: <strong>น.ส.สิริปราการณ์ จันทร์ชื่น (แตงกวา)</strong> ม.5/2</div>
+            <div class="pass-leader-sub">สมาชิก 2 คน</div>
+          </div>
+          <span class="role-badge" style="background:#fff3e0;color:#8a4500;margin-left:auto">Mellophone</span>
+        </div>
+        <div class="pass-members">
+          <div class="member-chip"><span class="nick">อิ้ง</span> ด.ญ.ศิริพัชร์ ชาตะรักษ์ <span class="cls">ม.1/2</span></div>
+          <div class="member-chip"><span class="nick">น้อย</span> น.ส.น้อย <span class="cls">ม.4/1</span></div>
+        </div>
       </div>
-      <div class="member-card">
-        <div class="avatar av-coral" style="font-size:11px">MT</div>
-        <div class="member-name">อภิญญา รุ่งเรือง</div>
-        <div class="member-role">เลขาวง</div>
-        <span class="role-badge badge-coral">ธุรการ</span>
+
+      <!-- Baritone -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#e8f5e9;color:#1b5e20">BR</div>
+          <div>
+            <div class="pass-leader-name">🎵 Baritone &nbsp;·&nbsp; หัวหน้า Pass: <strong>น.ส.ชฎาธาร พลเยี่ยม (เคท)</strong> ม.4/1</div>
+            <div class="pass-leader-sub">สมาชิก 2 คน</div>
+          </div>
+          <span class="role-badge badge-green" style="margin-left:auto">Baritone</span>
+        </div>
+        <div class="pass-members">
+          <div class="member-chip"><span class="nick">เดียร์</span> ด.ญ.กัญญาภัค พรมสุวรรณ <span class="cls">ม.1/2</span></div>
+          <div class="member-chip"><span class="nick">คิง</span> ด.ช.ธนกฤต อังศุนาค <span class="cls">ม.4/2</span></div>
+        </div>
       </div>
+
+      <!-- Tuba -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#faf0cc;color:#7a5500">TB</div>
+          <div>
+            <div class="pass-leader-name">🎺 Tuba &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายธนพล สมสนุก (แตม)</strong> ม.6/2</div>
+            <div class="pass-leader-sub">สมาชิก 2 คน</div>
+          </div>
+          <span class="role-badge badge-gold" style="margin-left:auto">Tuba</span>
+        </div>
+        <div class="pass-members">
+          <div class="member-chip"><span class="nick">เพชร</span> ด.ช.ภาณุพงศ์ ภู่ดอก <span class="cls">ม.2/1</span></div>
+          <div class="member-chip"><span class="nick">ภู</span> นายภูริภัทร ภาคสุข <span class="cls">ม.4/1</span></div>
+        </div>
+      </div>
+
+      <!-- Tenor -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#ede7f6;color:#4a148c">TN</div>
+          <div>
+            <div class="pass-leader-name">🥁 Tenor &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายพีระภัทร รุ่งเรือง (ซัน)</strong> ม.6/2</div>
+            <div class="pass-leader-sub">สมาชิก 1 คน</div>
+          </div>
+          <span class="role-badge badge-purple" style="margin-left:auto">Tenor</span>
+        </div>
+        <div class="pass-members">
+          <div class="member-chip"><span class="nick">โต๋</span> นายชลตระกานต์ มาฉาย <span class="cls">ม.5/2 เลขที่ 2</span></div>
+        </div>
+      </div>
+
+      <!-- Snare -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#fce4ec;color:#880e4f">SN</div>
+          <div>
+            <div class="pass-leader-name">🥁 Snare &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายภัคพล งามประเสริฐ (บาส)</strong> ม.6/2 เลขที่ 4</div>
+            <div class="pass-leader-sub">สมาชิก 4 คน</div>
+          </div>
+          <span class="role-badge" style="background:#fce4ec;color:#880e4f;margin-left:auto">Snare</span>
+        </div>
+        <div class="pass-members">
+          <div class="member-chip"><span class="nick">บุณ</span> ด.ช.สิรภพ รณภาพ <span class="cls">ม.1/2 เลขที่ 9</span></div>
+          <div class="member-chip"><span class="nick">ตัง</span> ด.ช.สิทธิโชค ผิวงาม <span class="cls">ม.1/2 เลขที่ 18</span></div>
+          <div class="member-chip"><span class="nick">หนึ่ง</span> ด.ช.อานนท์ <span class="cls">ม.1/1 เลขที่ 6</span></div>
+          <div class="member-chip"><span class="nick">เก้า</span> ด.ช.ศุภกร สมรัตน <span class="cls">ม.3/5 เลขที่ 8</span></div>
+        </div>
+      </div>
+
+      <!-- Bass Drum -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#e0f7fa;color:#006064">BD</div>
+          <div>
+            <div class="pass-leader-name">🥁 Bass Drum &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายณัฐพล สารเศวตร์ (ฟีม)</strong> ม.6/2 เลขที่ 11</div>
+            <div class="pass-leader-sub">สมาชิก 5 คน</div>
+          </div>
+          <span class="role-badge" style="background:#e0f7fa;color:#006064;margin-left:auto">Bass Drum</span>
+        </div>
+        <div class="pass-members">
+          <div class="member-chip"><span class="nick">อันดา</span> ด.ช.ปวรปรัชญ์ ลิขิตธนานุกิจ <span class="cls">ม.1/3 เลขที่ 18</span></div>
+          <div class="member-chip"><span class="nick">ชาป</span> ด.ช.ประวีร์ เชิดชูสกุลชัย <span class="cls">ม.1/3 เลขที่ 6</span></div>
+          <div class="member-chip"><span class="nick">ซิก</span> ด.ช.ธนวินท์ พานิช <span class="cls">ม.3/5 เลขที่ 12</span></div>
+          <div class="member-chip"><span class="nick">นน</span> ด.ช.ศักดินนท์ เพ็ชรศิริ <span class="cls">ม.3/7 เลขที่ 1</span></div>
+          <div class="member-chip"><span class="nick">เปเปอร์</span> ด.ช.พิตตินันท์ วงศ์อภัย <span class="cls">ม.3/1 เลขที่ 6</span></div>
+        </div>
+      </div>
+
+      <!-- Marching Cymbals -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#fff8e1;color:#f57f17">CY</div>
+          <div>
+            <div class="pass-leader-name">🥁 Marching Cymbals &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายณัฐพล สารเศวตร์ (ฟีม)</strong> ม.6/2 เลขที่ 11</div>
+            <div class="pass-leader-sub">สมาชิก 2 คน</div>
+          </div>
+          <span class="role-badge" style="background:#fff8e1;color:#f57f17;margin-left:auto">Cymbals</span>
+        </div>
+        <div class="pass-members">
+          <div class="member-chip"><span class="nick">โต้</span> ด.ช.สิรภพ ไชยวงศ์คต <span class="cls">ม.1/2 เลขที่ 3</span></div>
+          <div class="member-chip"><span class="nick">เต้</span> ด.ช.จักรภัทร อบอุ่น <span class="cls">ม.1/1 เลขที่ 1</span></div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -852,8 +1024,8 @@
 
 <!-- FOOTER -->
 <footer>
-  <strong>วงโยธวาทิตโรงเรียนสยามวิทยา</strong><br>
-  ก่อตั้ง พ.ศ. 2538 &nbsp;·&nbsp; กรุงเทพมหานคร &nbsp;·&nbsp; สมาชิก 48 คน
+  <strong>วงโยธวาทิตโรงเรียนหาดอมราอักษรลักษณ์วิทยา</strong><br>
+  ก่อตั้ง พ.ศ. 2538 &nbsp;·&nbsp; จ.สมุทรปราการ &nbsp;·&nbsp; ผู้ควบคุมวง อ.ชนม์สวัสดิ์ จันทร์กระแจะ
 </footer>
 
 <script>
