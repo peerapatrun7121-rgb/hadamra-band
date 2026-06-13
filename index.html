@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="HAD.png" type="image/png">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- โค้ดแสดงรูปภาพเวลาส่งลิงก์ในแชท (Open Graph Metadata) -->
+  <meta property="og:title" content="วงโยธวาทิต | โรงเรียนหาดอมราอักษรลักษณ์วิทยา">
+  <meta property="og:description" content="เว็บไซต์ทางการของวงโยธวาทิต โรงเรียนหาดอมราอักษรลักษณ์วิทยา">
+  <meta property="og:image" content="YOBAN.png">
+  <meta property="og:type" content="website">
+  <title>วงโยธวาทิต | โรงเรียนหาดอมราอักษรลักษณ์วิทยา</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&family=Kanit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #1a2f5e;
+      --navy-light: #0d1f4a;
+      --gold: #c8a84b;
+      --gold-light: #f0d070;
+      --gold-pale: #faf0cc;
+      --white: #ffffff;
+      --bg: #f4f6fb;
+      --text: #1a1a2e;
+      --text-muted: #5a6080;
+      --border: rgba(0,0,0,0.08);
+      --card-bg: #ffffff;
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: .85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-light);
+      font-family: 'Kanit', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .nav-logo .logo-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #5a3e00;
+    }
+    .nav-links {
+      display: flex;
+      gap: .25rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 13px;
+      padding: .4rem .8rem;
+      border-radius: 20px;
+      transition: all .2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: rgba(200,168,75,0.2);
+      color: var(--gold-light);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      padding: 4rem 1.5rem;
+      text-align: center;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: -20px; /* Expand slightly to hide blur edges */
+      background: linear-gradient(160deg, rgba(10, 22, 40, 0.75) 0%, rgba(16, 32, 80, 0.85) 100%), url('YOBAN2.jpeg') no-repeat center center / cover;
+      filter: blur(15px); /* This blurs the background image completely to hide pixelation */
+      z-index: 1;
+    }
+    .hero-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+    .school-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #b8940a, #f0d070);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      border: 3px solid rgba(200,168,75,0.5);
+      font-size: 36px;
+      box-shadow: 0 0 30px rgba(200,168,75,0.2);
+    }
+    .profile-main {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a3a7a, #2a5abf);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      border: 4px solid rgba(200,168,75,0.7);
+      font-size: 64px;
+      box-shadow: 0 0 40px rgba(200,168,75,0.25);
+    }
+    .hero-title {
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      font-family: 'Kanit', sans-serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 3px;
+      margin-bottom: .25rem;
+    }
+    .hero-sub {
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+      font-size: 13px;
+      color: rgba(200,168,75,0.75);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+    .hero-school {
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 1.75rem;
+    }
+    .stat-row {
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat-chip {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(200,168,75,0.25);
+      border-radius: 20px;
+      padding: .35rem 1rem;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+    }
+    .stat-chip span { color: var(--gold-light); font-weight: 600; }
+
+    /* ── TABS ── */
+    .tabs-wrapper {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 60px;
+      z-index: 90;
+    }
+    .tabs {
+      display: flex;
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      padding: .9rem 1.2rem;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 14px;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tab-btn:hover { color: var(--navy); }
+    .tab-btn.active {
+      color: var(--navy-mid);
+      border-bottom-color: var(--gold);
+      font-weight: 500;
+    }
+    .tab-btn i { font-size: 15px; }
+
+    /* ── MAIN CONTENT ── */
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .tab-section { display: none; }
+    .tab-section.active { display: block; }
+
+    .section-title {
+      font-family: 'Kanit', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 22px;
+      background: var(--gold);
+      border-radius: 3px;
+      display: block;
+    }
+    .section-title i { font-size: 17px; color: var(--gold); }
+
+    /* ── INFO GRID ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 1.75rem;
+    }
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
+      transition: box-shadow .2s;
+    }
+    .info-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+    .info-card .ic-icon { font-size: 22px; color: var(--gold); margin-bottom: .5rem; }
+    .info-card .ic-label { font-size: 12px; color: var(--text-muted); margin-bottom: .2rem; }
+    .info-card .ic-val { font-size: 15px; color: var(--text); font-weight: 500; }
+
+    .about-text {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--text);
+    }
+    .about-text p + p { margin-top: 1rem; }
+
+    /* ── MEMBERS ── */
+    .conductor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 2rem;
+    }
+    .member-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem;
+      text-align: center;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .member-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .member-card.featured { border-color: var(--gold); }
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0 auto .75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .av-gold { background: var(--gold-pale); color: #7a5500; border: 2px solid var(--gold); }
+    .av-blue { background: #ddeeff; color: #004488; }
+    .av-green { background: #ddf2e8; color: #005533; }
+    .av-purple { background: #eedfff; color: #5500aa; }
+    .av-coral { background: #ffe8e0; color: #8a2200; }
+    .member-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: .2rem; }
+    .member-role { font-size: 12px; color: var(--text-muted); margin-bottom: .5rem; }
+    .role-badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 9px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+    .badge-gold { background: var(--gold-pale); color: #7a5500; }
+    .badge-blue { background: #ddeeff; color: #003a80; }
+    .badge-green { background: #ddf2e8; color: #004422; }
+    .badge-purple { background: #eedfff; color: #450090; }
+    .badge-coral { background: #ffe8e0; color: #7a2000; }
+
+    /* ── PASS SECTION ── */
+    .pass-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .pass-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: .9rem 1.25rem;
+      background: linear-gradient(90deg, rgba(200,168,75,0.06) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .pass-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .pass-leader-name { font-size: 14px; font-weight: 500; color: var(--text); }
+    .pass-leader-sub { font-size: 12px; color: var(--text-muted); }
+    .pass-members {
+      padding: .75rem 1.25rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .member-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: .3rem .75rem;
+      font-size: 12px;
+      color: var(--text);
+    }
+    .member-chip .nick {
+      font-weight: 600;
+      color: var(--navy-mid);
+    }
+    .member-chip .cls {
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    /* ── VIDEOS ── */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 1.75rem;
+    }
+    .video-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .video-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.12); transform: translateY(-2px); }
+    .video-thumb {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .play-btn {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(255,255,255,0.45);
+      backdrop-filter: blur(4px);
+      transition: transform .2s, background .2s;
+    }
+    .video-card:hover .play-btn { transform: scale(1.1); background: rgba(255,255,255,0.25); }
+    .play-btn i { font-size: 18px; color: white; margin-left: 2px; }
+    .vbadge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+    .video-info { padding: .9rem 1rem; }
+    .video-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: .3rem; }
+    .video-meta { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+
+    /* ── AWARDS ── */
+    .awards-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.75rem; }
+    .award-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: box-shadow .2s;
+    }
+    .award-item:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.07); }
+    .medal {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .medal-gold { background: #fff8e0; border: 2px solid var(--gold); }
+    .medal-silver { background: #f0f0f4; border: 2px solid #aaa; }
+    .medal-bronze { background: #fff2e5; border: 2px solid #b87333; }
+    .award-info { flex: 1; min-width: 0; }
+    .award-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: .2rem; }
+    .award-detail { font-size: 12px; color: var(--text-muted); }
+    .award-year { font-size: 13px; font-weight: 600; color: var(--gold); white-space: nowrap; }
+
+    /* ── WORKS ── */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 1.75rem;
+    }
+    .work-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: box-shadow .2s;
+    }
+    .work-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.07); }
+    .work-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm);
+      background: var(--gold-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .work-icon i { font-size: 18px; color: var(--gold); }
+    .work-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: .25rem; }
+    .work-date { font-size: 12px; color: var(--text-muted); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 1.75rem 1rem;
+      font-size: 13px;
+      margin-top: 2rem;
+    }
+    footer strong { color: var(--gold-light); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero { padding: 2.5rem 1rem 2rem; }
+      .profile-main { width: 110px; height: 110px; font-size: 48px; }
+      .content { padding: 1.5rem .75rem; }
+    }
+
+    /* ── SCROLL ANIMATION ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .35s ease, transform .35s ease;
+      will-change: transform, opacity;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-icon"><img src="HAD.png" alt="HAD" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+    วงโยธวาทิต
+  </div>
+  <ul class="nav-links">
+    <li><a href="#" onclick="switchTab('about')" class="active" id="nav-about">เกี่ยวกับวง</a></li>
+    <li><a href="#" onclick="switchTab('members')" id="nav-members">สมาชิก</a></li>
+    <li><a href="#" onclick="switchTab('videos')" id="nav-videos">วิดีโอ</a></li>
+    <li><a href="#" onclick="switchTab('awards')" id="nav-awards">รางวัล</a></li>
+    <li><a href="#" onclick="switchTab('works')" id="nav-works">ผลงาน</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="school-logo"><img src="HAD.png" alt="HAD" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+    <div class="profile-main"><img src="YOBAN.png" alt="YOBAN" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+    <div class="hero-title">วงโยธวาทิต</div>
+    <div class="hero-sub">Marching Band</div>
+    <div class="hero-school">โรงเรียนหาดอมราอักษรลักษณ์วิทยา &nbsp;·&nbsp; จ.สมุทรปราการ</div>
+    <div class="stat-row">
+      <div class="stat-chip">สมาชิก <span>34</span> คน</div>
+      <div class="stat-chip">รางวัล <span>32</span> รางวัล</div>
+      <div class="stat-chip">แสดง <span>120+</span> ครั้ง</div>
+      <div class="stat-chip">ก่อตั้ง <span>28</span> ปี</div>
+    </div>
+  </div>
+</section>
+
+<!-- TABS -->
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('about')"><i class="fa-solid fa-circle-info"></i> เกี่ยวกับวง</button>
+    <button class="tab-btn" onclick="switchTab('members')"><i class="fa-solid fa-users"></i> สมาชิก</button>
+    <button class="tab-btn" onclick="switchTab('videos')"><i class="fa-solid fa-play"></i> วิดีโอ</button>
+    <button class="tab-btn" onclick="switchTab('awards')"><i class="fa-solid fa-trophy"></i> รางวัล</button>
+    <button class="tab-btn" onclick="switchTab('works')"><i class="fa-solid fa-music"></i> ผลงาน</button>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<main class="content">
+
+  <!-- ABOUT -->
+  <section id="tab-about" class="tab-section active">
+    <div class="section-title"><i class="fa-solid fa-circle-info"></i> ข้อมูลทั่วไป</div>
+    <div class="info-grid fade-in">
+      <div class="info-card">
+        <div class="ic-icon"><i class="fa-solid fa-school"></i></div>
+        <div class="ic-label">สังกัด</div>
+        <div class="ic-val">โรงเรียนหาดอมราอักษรลักษณ์วิทยา</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="ic-label">ที่ตั้ง</div>
+        <div class="ic-val">สมุทรปราการ</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon"><i class="fa-solid fa-calendar"></i></div>
+        <div class="ic-label">ปีที่ก่อตั้ง</div>
+        <div class="ic-val">พ.ศ. 2538</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="ic-label">จำนวนสมาชิก</div>
+        <div class="ic-val">34 คน</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon"><i class="fa-solid fa-music"></i></div>
+        <div class="ic-label">แนวดนตรี</div>
+        <div class="ic-val">โยธวาทิต / Parade</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon"><i class="fa-solid fa-trophy"></i></div>
+        <div class="ic-label">รางวัลระดับประเทศ</div>
+        <div class="ic-val">12 รางวัล</div>
+      </div>
+    </div>
+    <div class="section-title"><i class="fa-solid fa-book-open"></i> ประวัติวง</div>
+    <div class="about-text fade-in">
+      <p>วงโยธวาทิตโรงเรียนหาดอมราอักษรลักษณ์วิทยา ก่อตั้งขึ้นเมื่อปี พ.ศ. 2538 ด้วยความมุ่งมั่นในการส่งเสริมทักษะทางดนตรีและวินัยให้แก่นักเรียน ภายใต้การดูแลของ อ.ชนม์สวัสดิ์ จันทร์กระแจะ ผู้ควบคุมวง ตลอดระยะเวลากว่า 28 ปี วงได้เติบโตอย่างต่อเนื่องจนกลายเป็นหนึ่งในวงโยธวาทิตชั้นนำของประเทศ ที่ได้รับรางวัลจากการแข่งขันระดับชาติมากมาย</p>
+      <p>สมาชิกทุกคนได้รับการฝึกฝนทั้งด้านเทคนิคการบรรเลง การเดินสวนสนาม และการแสดงที่สวยงาม โดยมีเป้าหมายเพื่อสร้างนักดนตรีที่มีคุณภาพและปลูกฝังความภาคภูมิใจในสถาบันให้แก่นักเรียนทุกคน</p>
+      <p>ปัจจุบันวงแบ่งออกเป็นส่วน Trumpet, Mellophone, Baritone, Tuba, Tenor, Snare, Bass Drum และ Marching Cymbals ซึ่งทำงานร่วมกันอย่างกลมกลืนในทุกการแสดง</p>
+    </div>
+  </section>
+
+    <!-- MEMBERS -->
+  <section id="tab-members" class="tab-section">
+
+    <!-- ผู้ควบคุมวง -->
+    <div class="section-title"><i class="fa-solid fa-chalkboard-user"></i> ผู้ควบคุมวง</div>
+    <div class="conductor-grid fade-in" style="margin-bottom:2rem">
+      <div class="member-card featured">
+        <div class="avatar av-gold"><img src="Boat.jpg" alt="ชนม์สวัสดิ์ จันทร์กระแจะ" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+        <div class="member-name">อ.ชนม์สวัสดิ์ จันทร์กระแจะ</div>
+        <div class="member-role">ผู้ควบคุมวง</div>
+        <span class="role-badge badge-gold">ผู้ควบคุมวง</span>
+      </div>
+    </div>
+
+    <!-- คณะกรรมการบริหาร -->
+    <div class="section-title"><i class="fa-solid fa-crown"></i> คณะกรรมการบริหารวง</div>
+    <div class="conductor-grid fade-in" style="margin-bottom:2rem">
+      <div class="member-card featured">
+        <div class="avatar av-gold" style="font-size:11px"><img src="Tum.jpg" alt="ธนพล สมสนุก" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+        <div class="member-name">นายธนพล สมสนุก (แตม)</div>
+        <div class="member-role">ประธานวง · ม.6/2 · Tuba</div>
+        <span class="role-badge badge-gold">ประธาน</span>
+      </div>
+      <div class="member-card featured">
+        <div class="avatar av-blue" style="font-size:11px"><img src="Sun.jpg" alt="พีระภัทร รุ่งเรือง" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+        <div class="member-name">นายพีระภัทร รุ่งเรือง (ซัน)</div>
+        <div class="member-role">รองประธาน · ม.6/2 · Tenor</div>
+        <span class="role-badge badge-blue">รองประธาน</span>
+      </div>
+      <div class="member-card">
+        <div class="avatar av-purple" style="font-size:11px">ลข.</div>
+        <div class="member-name">น.ส.พัสตราภรณ์ เภาโพธิ์ (อ๋อมแอ๋ม)</div>
+        <div class="member-role">เลขาประธาน · ม.6/4 · Trumpet</div>
+        <span class="role-badge badge-purple">เลขา</span>
+      </div>
+      <div class="member-card">
+        <div class="avatar av-green" style="font-size:11px"><img src="To.jpg" alt="ชลตระกานต์ มาฉาย" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+        <div class="member-name">นายชลตระกานต์ มาฉาย (โต๋)</div>
+        <div class="member-role">Conductor ประจำวง · ม.5/2 · Tenor</div>
+        <span class="role-badge badge-green">Conductor</span>
+      </div>
+    </div>
+
+    <!-- หัวหน้า Pass และสมาชิก -->
+    <div class="section-title"><i class="fa-solid fa-music"></i> หัวหน้า Pass และสมาชิก</div>
+    <div class="fade-in">
+
+      <!-- Trumpet -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#ddeeff;color:#003a80">TP</div>
+          <div>
+            <div class="pass-leader-name">🎺 Trumpet &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายณัฐวุฒิ สุริยะชัยพร (แบงค์)</strong> ม.6/2</div>
+            <div class="pass-leader-sub">สมาชิก 8 คน</div>
+          </div>
+          <span class="role-badge badge-blue" style="margin-left:auto">Trumpet</span>
+        </div>
+        <div class="pass-members" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; padding: 1.25rem;">
+          
+          <div class="member-card">
+            <div class="avatar av-blue" style="font-size:11px"><img src="Bae.jpg" alt="ณัฐวุฒิ สุริยะชัยพร" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">แบงค์</span></div>
+            <div class="member-role">นายณัฐวุฒิ สุริยะชัยพร</div>
+            <span class="role-badge badge-blue">ม.6/2</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue">รูป</div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">เอิร์น</span></div>
+            <div class="member-role">ด.ญ.โยษิตา อินทระ</div>
+            <span class="role-badge badge-blue">ม.1/2</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue"><img src="En.jpg" alt="ด.ญ.ปิยธิดา ใจพุก" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">เอิร์น</span></div>
+            <div class="member-role">ด.ญ.ปิยธิดา ใจพุก</div>
+            <span class="role-badge badge-blue">ม.1/2</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue">รูป</div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">อิ๊ง</span></div>
+            <div class="member-role">ด.ญ.นันทิกานต์ กันดิษฐ</div>
+            <span class="role-badge badge-blue">ม.1/2</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue">รูป</div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">ปาย</span></div>
+            <div class="member-role">ด.ญ.ฐิติพร บุญทรัพย์</div>
+            <span class="role-badge badge-blue">ม.1/3</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue"><img src="Yye.jpg" alt="ทิพรดา ดีชุ่ม" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">หญิง</span></div>
+            <div class="member-role">ด.ญ.ทิพรดา ดีชุ่ม</div>
+            <span class="role-badge badge-blue">ม.2/6</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue"><img src="Sa.jpg" alt="สุฐิดา การวิจัย" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">ช่า</span></div>
+            <div class="member-role">น.ส.สุฐิดา การวิจัย</div>
+            <span class="role-badge badge-blue">ม.4/1</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue">รูป</div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">ป๊อบ</span></div>
+            <div class="member-role">นายวีรวัฒน์ บุญเฉย</div>
+            <span class="role-badge badge-blue">สมาชิก</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue">รูป</div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">อ๋อมแอ๋ม</span></div>
+            <div class="member-role">น.ส.พัสตราภรณ์ เภาโพธิ์</div>
+            <span class="role-badge badge-blue">ม.6/4</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mellophone -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#fff3e0;color:#8a4500">ML</div>
+          <div>
+            <div class="pass-leader-name">🎷 Mellophone &nbsp;·&nbsp; หัวหน้า Pass: <strong>น.ส.สิริปราการณ์ จันทร์ชื่น (แตงกวา)</strong> ม.5/2</div>
+            <div class="pass-leader-sub">สมาชิก 2 คน</div>
+          </div>
+          <span class="role-badge" style="background:#fff3e0;color:#8a4500;margin-left:auto">Mellophone</span>
+        </div>
+        <div class="pass-members" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; padding: 1.25rem;">
+          
+          <div class="member-card">
+            <div class="avatar av-coral" style="font-size:11px"><img src="Gua.jpg" alt="สิริปราการณ์ จันทร์ชื่น" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">แตงกวา</span></div>
+            <div class="member-role">น.ส.สิริปราการณ์ จันทร์ชื่น</div>
+            <span class="role-badge badge-coral">ม.5/2</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-coral"><img src="Ing.jpg" alt="ด.ญ.ศิริพัชร์ ชาตะรักษ์" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">อิ้ง</span></div>
+            <div class="member-role">ด.ญ.ศิริพัชร์ ชาตะรักษ์</div>
+            <span class="role-badge badge-coral">ม.1/2</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-coral"><img src="Nxy.jpg" alt="น.ส.น้อย" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">น้อย</span></div>
+            <div class="member-role">น.ส.น้อย</div>
+            <span class="role-badge badge-coral">ม.4/1</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Baritone -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#e8f5e9;color:#1b5e20">BR</div>
+          <div>
+            <div class="pass-leader-name">🎵 Baritone &nbsp;·&nbsp; หัวหน้า Pass: <strong>น.ส.ชฎาธาร พลเยี่ยม (เคท)</strong> ม.4/1</div>
+            <div class="pass-leader-sub">สมาชิก 2 คน</div>
+          </div>
+          <span class="role-badge badge-green" style="margin-left:auto">Baritone</span>
+        </div>
+        <div class="pass-members" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; padding: 1.25rem;">
+          
+          <div class="member-card">
+            <div class="avatar av-green" style="font-size:11px"><img src="Kate.jpg" alt="ชฎาธาร พลเยี่ยม" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">เคท</span></div>
+            <div class="member-role">น.ส.ชฎาธาร พลเยี่ยม</div>
+            <span class="role-badge badge-green">ม.4/1</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-green"><img src="Dia.jpg" alt="ด.ญ.กัญญาภัค พรมสุวรรณ" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">เดียร์</span></div>
+            <div class="member-role">ด.ญ.กัญญาภัค พรมสุวรรณ</div>
+            <span class="role-badge badge-green">ม.1/2</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-green"><img src="King.jpg" alt="ธนกฤต อังศุนาค" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">คิง</span></div>
+            <div class="member-role">ด.ช.ธนกฤต อังศุนาค</div>
+            <span class="role-badge badge-green">ม.4/2</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tuba -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#faf0cc;color:#7a5500">TB</div>
+          <div>
+            <div class="pass-leader-name">🎺 Tuba &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายธนพล สมสนุก (แตม)</strong> ม.6/2</div>
+            <div class="pass-leader-sub">สมาชิก 2 คน</div>
+          </div>
+          <span class="role-badge badge-gold" style="margin-left:auto">Tuba</span>
+        </div>
+        <div class="pass-members" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; padding: 1.25rem;">
+          
+          <div class="member-card">
+            <div class="avatar av-gold" style="font-size:11px"><img src="Tum.jpg" alt="ธนพล สมสนุก" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">แตม</span></div>
+            <div class="member-role">นายธนพล สมสนุก</div>
+            <span class="role-badge badge-gold">ม.6/2</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-gold"><img src="Diamond.jpg" alt="ด.ช.ภาณุพงศ์ ภู่ดอก" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">เพชร</span></div>
+            <div class="member-role">ด.ช.ภาณุพงศ์ ภู่ดอก</div>
+            <span class="role-badge badge-gold">ม.2/1</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-gold"><img src="Phu.jpg" alt="ภูริภัทร ภาคสุข" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">ภู</span></div>
+            <div class="member-role">นายภูริภัทร ภาคสุข</div>
+            <span class="role-badge badge-gold">ม.4/1</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tenor -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#ede7f6;color:#4a148c">TN</div>
+          <div>
+            <div class="pass-leader-name">🥁 Tenor &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายพีระภัทร รุ่งเรือง (ซัน)</strong> ม.6/2</div>
+            <div class="pass-leader-sub">สมาชิก 1 คน</div>
+          </div>
+          <span class="role-badge badge-purple" style="margin-left:auto">Tenor</span>
+        </div>
+        <div class="pass-members" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; padding: 1.25rem;">
+          
+          <div class="member-card">
+            <div class="avatar av-purple" style="font-size:11px"><img src="Sun.jpg" alt="พีระภัทร รุ่งเรือง" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">ซัน</span></div>
+            <div class="member-role">นายพีระภัทร รุ่งเรือง</div>
+            <span class="role-badge badge-purple">ม.6/2</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-purple"><img src="To.jpg" alt="ชลตระกานต์ มาฉาย" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">โต๋</span></div>
+            <div class="member-role">นายชลตระกานต์ มาฉาย</div>
+            <span class="role-badge badge-purple">ม.5/2 เลขที่ 2</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Snare -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#fce4ec;color:#880e4f">SN</div>
+          <div>
+            <div class="pass-leader-name">🥁 Snare &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายภัคพล งามประเสริฐ (บาส)</strong> ม.6/2 เลขที่ 4</div>
+            <div class="pass-leader-sub">สมาชิก 4 คน</div>
+          </div>
+          <span class="role-badge" style="background:#fce4ec;color:#880e4f;margin-left:auto">Snare</span>
+        </div>
+        <div class="pass-members" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; padding: 1.25rem;">
+          
+          <div class="member-card">
+            <div class="avatar av-purple" style="font-size:11px"><img src="Bb.jpg" alt="ภัคพล งามประเสริฐ" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">บาส</span></div>
+            <div class="member-role">นายภัคพล งามประเสริฐ</div>
+            <span class="role-badge" style="background:#fce4ec;color:#880e4f;">ม.6/2 เลขที่ 4</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-purple"><img src="Bun.jpg" alt="ด.ช.สิรภพ รณภาพ" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">บุณ</span></div>
+            <div class="member-role">ด.ช.สิรภพ รณภาพ</div>
+            <span class="role-badge" style="background:#fce4ec;color:#880e4f;">ม.1/2 เลขที่ 9</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-purple"><img src="gluten.jpg" alt="ด.ช.สิทธิโชค ผิวงาม" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">ตัง</span></div>
+            <div class="member-role">ด.ช.สิทธิโชค ผิวงาม</div>
+            <span class="role-badge" style="background:#fce4ec;color:#880e4f;">ม.1/2 เลขที่ 18</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-purple"><img src="one.jpg" alt="ด.ช.อานนท์" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">หนึ่ง</span></div>
+            <div class="member-role">ด.ช.อานนท์</div>
+            <span class="role-badge" style="background:#fce4ec;color:#880e4f;">ม.1/1 เลขที่ 6</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-purple"><img src="Kaw.jpg" alt="ศุภกร สมรัตน" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">เก้า</span></div>
+            <div class="member-role">ด.ช.ศุภกร สมรัตน</div>
+            <span class="role-badge" style="background:#fce4ec;color:#880e4f;">ม.3/5 เลขที่ 8</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bass Drum -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#e0f7fa;color:#006064">BD</div>
+          <div>
+            <div class="pass-leader-name">🥁 Bass Drum &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายณัฐพล สารเศวตร์ (ฟีม)</strong> ม.6/2 เลขที่ 11</div>
+            <div class="pass-leader-sub">สมาชิก 5 คน</div>
+          </div>
+          <span class="role-badge" style="background:#e0f7fa;color:#006064;margin-left:auto">Bass Drum</span>
+        </div>
+        <div class="pass-members" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; padding: 1.25rem;">
+          
+          <div class="member-card">
+            <div class="avatar av-blue" style="font-size:11px"><img src="Fil.jpg" alt="ณัฐพล สารเศวตร์" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">ฟีม</span></div>
+            <div class="member-role">นายณัฐพล สารเศวตร์</div>
+            <span class="role-badge" style="background:#e0f7fa;color:#006064;">ม.6/2 เลขที่ 11</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue"><img src="Anda.jpg" alt="ด.ช.ปวรปรัชญ์ ลิขิตธนานุกิจ" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">อันดา</span></div>
+            <div class="member-role">ด.ช.ปวรปรัชญ์ ลิขิตธนานุกิจ</div>
+            <span class="role-badge" style="background:#e0f7fa;color:#006064;">ม.1/3 เลขที่ 18</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue"><img src="Cha.jpg" alt="ด.ช.ประวีร์ เชิดชูสกุลชัย" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">ชาป</span></div>
+            <div class="member-role">ด.ช.ประวีร์ เชิดชูสกุลชัย</div>
+            <span class="role-badge" style="background:#e0f7fa;color:#006064;">ม.1/3 เลขที่ 6</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue"><img src="Sikh.jpg" alt="ธนวินท์ พานิช" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">ซิก</span></div>
+            <div class="member-role">ด.ช.ธนวินท์ พานิช</div>
+            <span class="role-badge" style="background:#e0f7fa;color:#006064;">ม.3/5 เลขที่ 12</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue"><img src="Non.jpg" alt="ศักดินนท์ เพ็ชรศิริ" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">นน</span></div>
+            <div class="member-role">ด.ช.ศักดินนท์ เพ็ชรศิริ</div>
+            <span class="role-badge" style="background:#e0f7fa;color:#006064;">ม.3/7 เลขที่ 1</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-blue"><img src="Po.jpg" alt="พิตตินันท์ วงศ์อภัย" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">เปเปอร์</span></div>
+            <div class="member-role">ด.ช.พิตตินันท์ วงศ์อภัย</div>
+            <span class="role-badge" style="background:#e0f7fa;color:#006064;">ม.3/1 เลขที่ 6</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Marching Cymbals -->
+      <div class="pass-block">
+        <div class="pass-header">
+          <div class="pass-icon" style="background:#fff8e1;color:#f57f17">CY</div>
+          <div>
+            <div class="pass-leader-name">🥁 Marching Cymbals &nbsp;·&nbsp; หัวหน้า Pass: <strong>นายณัฐพล สารเศวตร์ (ฟีม)</strong> ม.6/2 เลขที่ 11</div>
+            <div class="pass-leader-sub">สมาชิก 2 คน</div>
+          </div>
+          <span class="role-badge" style="background:#fff8e1;color:#f57f17;margin-left:auto">Cymbals</span>
+        </div>
+        <div class="pass-members" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; padding: 1.25rem;">
+          
+          <div class="member-card">
+            <div class="avatar av-gold" style="font-size:11px"><img src="Fil.jpg" alt="ณัฐพล สารเศวตร์" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">ฟีม</span></div>
+            <div class="member-role">นายณัฐพล สารเศวตร์</div>
+            <span class="role-badge" style="background:#fff8e1;color:#f57f17;">ม.6/2 เลขที่ 11</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-gold">รูป</div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">โต้</span></div>
+            <div class="member-role">ด.ช.สิรภพ ไชยวงศ์คต</div>
+            <span class="role-badge" style="background:#fff8e1;color:#f57f17;">ม.1/2 เลขที่ 3</span>
+          </div>
+
+          <div class="member-card">
+            <div class="avatar av-gold"><img src="Tae.jpg" alt="ด.ช.จักรภัทร อบอุ่น" loading="lazy" decoding="async" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"></div>
+            <div class="member-name"><span style="font-weight:600; color:var(--navy-mid);">เต้</span></div>
+            <div class="member-role">ด.ช.จักรภัทร อบอุ่น</div>
+            <span class="role-badge" style="background:#fff8e1;color:#f57f17;">ม.1/1 เลขที่ 1</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section id="tab-videos" class="tab-section">
+    <div class="section-title"><i class="fa-solid fa-clapperboard"></i> วิดีโอการแสดง</div>
+    <div class="videos-grid fade-in">
+
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(135deg,#0a1628,#1a2f5e)">
+          <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+          <div class="vbadge" style="background:rgba(200,168,75,0.9);color:#3a2800">🏆 ชนะเลิศ</div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">การแข่งขันระดับประเทศ 2567</div>
+          <div class="video-meta"><i class="fa-regular fa-calendar"></i> ธ.ค. 2567 &nbsp;·&nbsp; 18 นาที</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(135deg,#0d3a1a,#1a6030)">
+          <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+          <div class="vbadge" style="background:rgba(80,200,100,0.9);color:#002200">📺 ถ่ายทอดสด</div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">ขบวนพาเหรดวันกีฬาแห่งชาติ</div>
+          <div class="video-meta"><i class="fa-regular fa-calendar"></i> ต.ค. 2567 &nbsp;·&nbsp; 25 นาที</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(135deg,#2d0a4a,#5a1a80)">
+          <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">งานวันวิชาการโรงเรียน 2567</div>
+          <div class="video-meta"><i class="fa-regular fa-calendar"></i> ส.ค. 2567 &nbsp;·&nbsp; 12 นาที</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(135deg,#3a1a00,#7a4000)">
+          <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+          <div class="vbadge" style="background:rgba(200,168,75,0.9);color:#3a2800">🥇 อันดับ 1</div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">การแข่งขันระดับเขต 2566</div>
+          <div class="video-meta"><i class="fa-regular fa-calendar"></i> พ.ย. 2566 &nbsp;·&nbsp; 20 นาที</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(135deg,#001830,#003060)">
+          <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+          <div class="vbadge" style="background:rgba(80,140,255,0.9);color:#00103a">🎬 Behind Scene</div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Behind the Scenes ค่ายฝึก</div>
+          <div class="video-meta"><i class="fa-regular fa-calendar"></i> ก.ค. 2567 &nbsp;·&nbsp; 8 นาที</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-thumb" style="background:linear-gradient(135deg,#1a0a00,#4a2000)">
+          <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">พิธีเปิดกีฬาสีประจำปี 2567</div>
+          <div class="video-meta"><i class="fa-regular fa-calendar"></i> ม.ค. 2567 &nbsp;·&nbsp; 15 นาที</div>
+        </div>
+      </div>
+
+    </div>
+    <p style="font-size:13px;color:var(--text-muted);text-align:center">* แทนที่ลิงก์วิดีโอ YouTube ใน HTML ในส่วน <code>video-thumb</code> หรือเพิ่ม <code>&lt;a href="..."&gt;</code> ในแต่ละการ์ด</p>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="tab-awards" class="tab-section">
+    <div class="section-title"><i class="fa-solid fa-award"></i> รางวัลที่ได้รับ</div>
+    <div class="awards-list fade-in">
+
+      <div class="award-item">
+        <div class="medal medal-gold">🥇</div>
+        <div class="award-info">
+          <div class="award-title">ชนะเลิศอันดับ 1 การแข่งขันวงโยธวาทิตระดับประเทศ</div>
+          <div class="award-detail">สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.) · ระดับมัธยมศึกษาตอนปลาย</div>
+        </div>
+        <div class="award-year">2567</div>
+      </div>
+
+      <div class="award-item">
+        <div class="medal medal-gold">🥇</div>
+        <div class="award-info">
+          <div class="award-title">รางวัลชนะเลิศ สาขา Best Percussion</div>
+          <div class="award-detail">IDBA Thailand Championship · การแข่งขันวงโยธวาทิตนานาชาติ</div>
+        </div>
+        <div class="award-year">2567</div>
+      </div>
+
+      <div class="award-item">
+        <div class="medal medal-silver">🥈</div>
+        <div class="award-info">
+          <div class="award-title">รองชนะเลิศอันดับ 1 ระดับประเทศ</div>
+          <div class="award-detail">การแข่งขันวงโยธวาทิต ศิลปหัตถกรรมนักเรียน ระดับชาติ</div>
+        </div>
+        <div class="award-year">2566</div>
+      </div>
+
+      <div class="award-item">
+        <div class="medal medal-gold">🥇</div>
+        <div class="award-info">
+          <div class="award-title">ชนะเลิศระดับภาคกลาง ประเภท Concert Band</div>
+          <div class="award-detail">การแข่งขันดนตรีนักเรียน ระดับภาคกลาง · กรุงเทพมหานคร</div>
+        </div>
+        <div class="award-year">2566</div>
+      </div>
+
+      <div class="award-item">
+        <div class="medal medal-bronze">🥉</div>
+        <div class="award-info">
+          <div class="award-title">รางวัลที่ 3 Best Visual Performance</div>
+          <div class="award-detail">Thailand Marching Band Festival · สนามศุภชลาศัย กรุงเทพฯ</div>
+        </div>
+        <div class="award-year">2566</div>
+      </div>
+
+      <div class="award-item">
+        <div class="medal medal-gold">🏆</div>
+        <div class="award-info">
+          <div class="award-title">ชนะเลิศระดับประเทศ 3 ปีซ้อน</div>
+          <div class="award-detail">การแข่งขันวงโยธวาทิตศิลปหัตถกรรมนักเรียนระดับชาติ (ต่อเนื่อง 3 ปี)</div>
+        </div>
+        <div class="award-year">2563–65</div>
+      </div>
+
+      <div class="award-item">
+        <div class="medal medal-silver">🥈</div>
+        <div class="award-info">
+          <div class="award-title">รองชนะเลิศ Best Brass Performance</div>
+          <div class="award-detail">การแข่งขันวงโยธวาทิตนานาชาติ Asia Pacific Band Championship</div>
+        </div>
+        <div class="award-year">2565</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section id="tab-works" class="tab-section">
+    <div class="section-title"><i class="fa-solid fa-star"></i> ผลงานและการแสดง</div>
+    <div class="works-grid fade-in">
+
+      <div class="work-card">
+        <div class="work-icon"><i class="fa-solid fa-trophy"></i></div>
+        <div>
+          <div class="work-title">แข่งขันระดับประเทศ 2567</div>
+          <div class="work-date"><i class="fa-regular fa-calendar"></i> ธันวาคม 2567</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-icon"><i class="fa-solid fa-person-walking"></i></div>
+        <div>
+          <div class="work-title">ขบวนพาเหรดวันชาติ</div>
+          <div class="work-date"><i class="fa-regular fa-calendar"></i> ธันวาคม 2567</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-icon"><i class="fa-solid fa-music"></i></div>
+        <div>
+          <div class="work-title">คอนเสิร์ตประจำปี</div>
+          <div class="work-date"><i class="fa-regular fa-calendar"></i> ตุลาคม 2567</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-icon"><i class="fa-solid fa-fire"></i></div>
+        <div>
+          <div class="work-title">เปิดงานกีฬาแห่งชาติ</div>
+          <div class="work-date"><i class="fa-regular fa-calendar"></i> กันยายน 2567</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-icon"><i class="fa-solid fa-building-columns"></i></div>
+        <div>
+          <div class="work-title">พิธีเปิดสภาผู้แทนราษฎร</div>
+          <div class="work-date"><i class="fa-regular fa-calendar"></i> สิงหาคม 2567</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-icon"><i class="fa-solid fa-plane"></i></div>
+        <div>
+          <div class="work-title">ทัวร์แสดงอาเซียน</div>
+          <div class="work-date"><i class="fa-regular fa-calendar"></i> มิถุนายน 2567</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div>
+          <div class="work-title">งานวันวิชาการโรงเรียน</div>
+          <div class="work-date"><i class="fa-regular fa-calendar"></i> มิถุนายน 2567</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-icon"><i class="fa-solid fa-crown"></i></div>
+        <div>
+          <div class="work-title">งานพระราชพิธีสำคัญ</div>
+          <div class="work-date"><i class="fa-regular fa-calendar"></i> พฤษภาคม 2567</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-icon"><i class="fa-solid fa-users"></i></div>
+        <div>
+          <div class="work-title">ค่ายฝึกอบรมนักดนตรีรุ่นใหม่</div>
+          <div class="work-date"><i class="fa-regular fa-calendar"></i> เมษายน 2567</div>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-icon"><i class="fa-solid fa-gift"></i></div>
+        <div>
+          <div class="work-title">พิธีเปิดกีฬาสีประจำปี</div>
+          <div class="work-date"><i class="fa-regular fa-calendar"></i> มกราคม 2567</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <strong>วงโยธวาทิตโรงเรียนหาดอมราอักษรลักษณ์วิทยา</strong><br>
+  ก่อตั้ง พ.ศ. 2538 &nbsp;·&nbsp; จ.สมุทรปราการ &nbsp;·&nbsp; ผู้ควบคุมวง อ.ชนม์สวัสดิ์ จันทร์กระแจะ
+</footer>
+
+<script>
+  const TABS = ['about','members','videos','awards','works'];
+
+  function switchTab(name) {
+    TABS.forEach(t => {
+      const sec = document.getElementById('tab-' + t);
+      const btn = document.querySelector(`[onclick="switchTab('${t}')"]`);
+      const navA = document.getElementById('nav-' + t);
+      if (sec) sec.classList.toggle('active', t === name);
+      if (btn) btn.classList.toggle('active', t === name);
+      if (navA) navA.classList.toggle('active', t === name);
+    });
+    // trigger fade-in for newly active tab
+    requestAnimationFrame(() => observeFadeIns());
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+
+  // fade-in on scroll (Optimized for Mobile Performance & Display)
+  function observeFadeIns() {
+    const els = document.querySelectorAll('.fade-in:not(.visible)');
+    if (!els.length) return;
+    
+    // If mobile or low performance, display immediately to avoid lagging and missing content
+    const isMobile = window.innerWidth <= 768;
+    
+    const io = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          if (isMobile) {
+            e.target.classList.add('visible');
+          } else {
+            setTimeout(() => e.target.classList.add('visible'), i * 30);
+          }
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.01, rootMargin: "50px" });
+    
+    els.forEach(el => {
+      // Force visible if it's already inside viewport when tab changes
+      const rect = el.getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+        el.classList.add('visible');
+      } else {
+        io.observe(el);
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', observeFadeIns);
+</script>
+</body>
+</html>
